@@ -368,7 +368,15 @@ RHS=min(reshape(5*ba1.*ba2 + 4*b1.*ba2 - 3*ba1 - 2*b3.*ba2 + 8*(ba1.*(3 - 2*b1 -
 isequal(LHS,RHS);
 
 %% Pg. 53, Flag-based SAT mapping
+
 %% Pg. 55, SCM-BCR
+
+b= dec2bin(2^5-1:-1:0)-'0';
+b1= b(:,1);b2= b(:,2);b3= b(:,3);b4= b(:,4);b5= b(:,5);
+
+LHS= b1.*b2.*b3.*b4.*b5;
+RHS= (b1.*b2.*b3.*b4)-((b1.*b2.*b3.*b4).*(1-b5));
+
 %% Pg. 56, Decomposition into symmetric and anti-symmetric parts
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
